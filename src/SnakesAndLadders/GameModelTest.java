@@ -24,7 +24,7 @@ class GameModelTest {
     void validateIncorrectFileFormat(){
         model = new GameModel();
 
-        model.readFile("src/SnakesAndLadders/BoardSetupInvalid.txt");
+        model.readFile("src/SnakesAndLadders/BoardSetup.txt");
         ArrayList<Integer> actualList = model.getJumpPositions();
 
         ArrayList<Integer> expectedList = new ArrayList<>();
@@ -48,7 +48,7 @@ class GameModelTest {
     void validateFilesNumberOfJumpers(){
         model = new GameModel();
 
-        model.readFile("src/SnakesAndLadders/BoardSetupInvalid2.txt");
+        model.readFile("src/SnakesAndLadders/BoardSetup.txt");
         String expectedErrorMessage = "Error in 'checkNumberOfJumpers'. Snakes and ladders are not 2 or more, or less. ";
         String actualErrorMessage = (String) model.getErrors().get(model.getErrors().size() - 1);
         assertEquals(expectedErrorMessage, actualErrorMessage, "Error message has not been correctly logged. ");
